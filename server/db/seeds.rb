@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Task.create! text: 'Something to do...'
-Task.create! text: 'Other stuff that needs to be done!'
-Task.create! text: 'This is done', done: true
+u01 = User.create! email: 'test01@example.com', password: '123456789'
+
+Task.create! text: 'Something to do...', user: u01
+Task.create! text: 'Other stuff that needs to be done!', user: u01
+Task.create! text: 'This is done', done: true, user: u01

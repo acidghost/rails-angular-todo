@@ -6,6 +6,9 @@
 %p
   %b Done:
   = @task.done
+%p
+  %b User:
+  = @task.user_id
 
 = link_to 'Edit', edit_task_path(@task)
 \|

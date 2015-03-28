@@ -40,7 +40,6 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
-    p params.inspect
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
@@ -70,6 +69,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:text, :done)
+      params.require(:task).permit(:text, :done, :user_id)
     end
 end

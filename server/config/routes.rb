@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
   scope :api do
     scope :v1 do
       match '*all', :controller => 'application', :action => 'handle_options_request', :constraints => {:method => 'OPTIONS'}, :via => ['OPTIONS']
 
-      resources :tasks
+      resources :users, path: '', only: [:show, :update, :edit] do
+        resources :tasks
+      end
     end
   end
 
