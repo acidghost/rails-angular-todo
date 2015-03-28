@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20150328155735) do
 
   create_table "tasks", force: true do |t|
     t.string   "text"
-    t.boolean  "done",       default: true
-    t.integer  "user_id",                   null: false
+    t.boolean  "done",       default: false
+    t.integer  "user_id",                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
