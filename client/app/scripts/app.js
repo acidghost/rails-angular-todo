@@ -28,6 +28,15 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/todo', {
+        templateUrl: 'views/todo.html',
+        controller: 'TodoCtrl',
+        resolve: {
+          tasks: function(TodoService) {
+            return TodoService.query().$promise;
+          }
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });

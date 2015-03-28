@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :tasks
+  scope :api do
+    scope :v1 do
+      match '*all', :controller => 'application', :action => 'handle_options_request', :constraints => {:method => 'OPTIONS'}, :via => ['OPTIONS']
+
+      resources :tasks
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
