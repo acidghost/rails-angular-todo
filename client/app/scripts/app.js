@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('clientApp', [
+  .module('todoApp', [
     'ngAnimate',
     'ngCookies',
     'ngMessages',
